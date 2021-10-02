@@ -78,20 +78,29 @@ function renderData(data) {
     followers.textContent = data.followers;
     following.textContent = data.following;
 
-    city.textContent = data.location ? data.location : `Not Available`;
-    if(city.textContent == `Not Available`) {
+    if (data.location) {
+        city.textContent = data.location;
+        locationClass.style.opacity="1";
+    } else {
+        city.textContent = `Not Available`;
         locationClass.style.opacity="0.3";
     }
-    twitter.textContent = data.twitter_username ? data.twitter_username : `Not Available`;
-    if(twitter.textContent == `Not Available`) {
+    if (data.twitter_username) {
+        twitter.textContent = data.twitter_username;
+        twitterClass.style.opacity="1";
+    } else {
+        twitter.textContent = `Not Available`;
         twitterClass.style.opacity="0.3";
     }
     website.textContent = data.html_url.slice(8, data.html_url.length);
     if(website.textContent == `Not Available`) {
         websiteClass.style.opacity="0.3";
     }
-    company.textContent = data.company ? data.company : `Not Available`;
-    if(company.textContent == `Not Available`) {
+    if (data.company) {
+        company.textContent = data.company;
+        companyClass.style.opacity="1";
+    } else {
+        company.textContent = `Not Available`;
         companyClass.style.opacity="0.3";
     }
 }
