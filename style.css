@@ -116,15 +116,6 @@ header {
 .moon-light-bg.active {
     background-image: url(assets/icon-sun.svg);
 }
-/* filter: brightness(500%); */
-/* .dark-light.active,
-.toggle.active {
-    color: var(--white);
-}
-.dark-light:hover.active,
-.toggle:hover.active {
-    color: var(--grayLight);
-} */
 /***************
 Search
 ***************/
@@ -175,9 +166,6 @@ Search
     margin-right: 20px;
     display: none;
 }
-/* .error-search p.active {
-    display: block;
-} */
 /***************
 Main
 ***************/
@@ -193,7 +181,7 @@ main {
                    "img lorem   lorem   lorem"
                    "aaa sec     sec     sec";
     grid-auto-columns: 25% 25% 25% 25%;
-    grid-template-rows: 100px 100px auto;
+    grid-template-rows: auto auto auto;
 }
 main.active {
     background: var(--grayDark);
@@ -212,6 +200,7 @@ main.active {
 }
 #lorem {
     grid-area: lorem;
+    padding: 25px 0;
 }
 #section {
     grid-area: sec;
@@ -256,4 +245,92 @@ main.active {
 }
 .icons article a:hover {
     text-decoration:underline;
+}
+/***************
+responsive Tablet
+***************/
+@media (max-width:1200px) {
+    .container {
+        width: 75%;
+    }
+    main {
+        grid-template: "img header  header"
+                       "img right   right"
+                       "lorem lorem   lorem"
+                       "sec sec     sec";
+        grid-auto-columns: 33% 33% 33%;
+        grid-template-rows: auto auto auto auto;
+    }
+}
+/***************
+responsive Mob
+***************/
+@media (max-width:767px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 30px 0;
+    }
+    main {
+        padding: 25px;
+    }
+    .user-form {
+        margin: 10px 0;
+        padding: 7px;
+    }
+    .user-form div:first-child {
+        width: 70%;
+    }
+    .user-form img {
+        height: 20px;
+        width: 20px;
+        margin: 0 7px;
+    }
+    #search {
+        font-size: 13px;
+        line-height: 25px;
+        letter-spacing: 1px;
+        width: 85%;
+    }
+    button {
+        height: 46px;
+        width: 86px;
+    }
+    #user-img {
+        height: 70px;
+        width: 70px;
+    }
+    .number {
+        padding: 15px;
+    }
+    .number div {
+        text-align: center;
+    }
+    .icons article {
+        flex: 1 0 100%;
+    }
+    .error-search p {
+        font-size: 13px;
+        text-align: center;
+    }
+}
+@media (max-width:330px) {
+    #search {
+        font-size: 13px;
+        line-height: 25px;
+        letter-spacing: 0px;
+        width: 100%;
+    }
+    button {
+        height: 40px;
+        width: 60px;
+    }
+    .user-form img {
+        margin: 0px 3px;
+    }
+}
+@media (max-width:310px) {
+    #search {
+        font-size: 11px;
+    }
 }
