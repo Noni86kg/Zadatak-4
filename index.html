@@ -36,10 +36,10 @@
 
     <!-- Main  -->
     <main class="main">
-      <img src="assets/icon-company.svg" id="user-img" alt="user-img">
-      <div id="user-name">
-        <h1>The Octocat</h1>
-        <h3>@octocat</h3>
+      <img src="assets/octocat.png" id="user-img" alt="user-img">
+      <div id="user">
+        <h1 id="user-name">The Octocat</h1>
+        <h3 id="link">@octocat</h3>
       </div>
       <p id="date">Joined 25 Jan 2011</p>
       <p id="lorem">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
@@ -47,34 +47,34 @@
         <div class="number">
           <div>
             <p>Repos</p>
-            <h2>8</h2>
+            <h2 id="repos">8</h2>
           </div>
           <div>
             <p>Followers</p>
-            <h2>3938</h2>
+            <h2 id="followers">3938</h2>
           </div>
           <div>
             <p>Following</p>
-            <h2>9</h2>
+            <h2 id="following">9</h2>
           </div>
         </div>
 
         <div class="icons">
           <article class="location">
             <img src="assets/icon-location.svg" alt="location">
-            <a href=""><p>San Francisco</p></a>
+            <a href=""><p id="city">San Francisco</p></a>
           </article>
           <article class="twitter">
             <img src="assets/icon-twitter.svg" alt="twitter">
-            <a href=""><p>Not Available</p></a>
+            <a href=""><p id="twitter">Not Available</p></a>
           </article>
           <article class="website">
             <img src="assets/icon-website.svg" alt="website">
-            <a href=""><p>https://github.blog</p></a>
+            <a href=""><p id="website">https://github.blog</p></a>
           </article>
           <article class="company">
             <img src="assets/icon-company.svg" alt="company">
-            <a href=""><p>@github</p></a>
+            <a href=""><p id="company">@github</p></a>
           </article>
         </div>
 
@@ -82,6 +82,7 @@
     </main>
     
   </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
 <script src="script.js"></script>
 </body>
 </html>
