@@ -249,6 +249,9 @@ main.active {
 .icons article a:hover {
     text-decoration:underline;
 }
+.twitter {
+    opacity: .3;
+}
 /***************
 responsive Tablet
 ***************/
