@@ -33,6 +33,7 @@ const websiteClass = document.querySelector('.website');
 const company = document.getElementById('company');
 const companyClass = document.querySelector('.company');
 
+
 // dark , light mode
 toggle.addEventListener('click', function(e) {
 
@@ -93,8 +94,10 @@ function renderData(data) {
         twitterClass.style.opacity="0.3";
     }
     website.textContent = data.html_url.slice(8, data.html_url.length);
+    websiteClass.childNodes[3].href = data.html_url;
     if(website.textContent == `Not Available`) {
         websiteClass.style.opacity="0.3";
+
     }
     if (data.company) {
         company.textContent = data.company;
