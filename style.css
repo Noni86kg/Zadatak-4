@@ -1,0 +1,342 @@
+:root {
+    --white: rgb(255, 255, 255);
+    --blue: rgb(0, 121, 255);
+    --black: rgb(20, 29, 47);
+    --grayDark: rgb(30, 42, 71);
+    --grayLight: rgb(105, 124, 154);
+    --blueLight: rgb(75, 106, 155);
+    --blackLight: rgb(75, 106, 155);
+    --whiteLight: rgb(246, 246, 255);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body {
+    font-family: 'Space Mono', monospace, sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--whiteLight);
+    color: var(--grayLight);
+}
+body.active {
+    background: var(--black);
+    color: var(--white);
+}
+h1 {
+    font-family: 'Space Mono', monospace, sans-serif;
+    font-size: 26px;
+    line-height: 38px;
+    font-weight: bold;
+    color: var(--black);
+}
+h1.active {
+    color: var(--white);
+}
+h2 {
+    font-family: 'Space Mono', monospace, sans-serif;
+    font-size: 22px;
+    line-height: 33px;
+    font-weight: bold;
+    color: var(--black);
+}
+h2.active {
+    color: var(--white);
+}
+h3 {
+    font-family: 'Space Mono', monospace, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--blue);
+}
+h4 {
+    font-family: 'Space Mono', monospace, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--black);
+}
+.container {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+button {
+    height: 50px;
+    width: 106px;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+}
+button:hover {
+    background: rgb(96, 171, 255);
+    cursor: pointer;
+    transition: .5s ease;
+}
+/***************
+Header
+***************/
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.toggle {
+    display: flex;
+    align-items: center;
+}
+.toggle:hover {
+    cursor: pointer;
+    filter: brightness(20%); 
+}
+.toggle:hover.active {
+    filter: brightness(50%); 
+}
+.toggle p {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-right: 15px;
+}
+.moon-light-bg {
+    background-image: url(assets/icon-moon.svg);
+    height: 20px;
+    width: 20px;
+}
+.moon-light-bg.active {
+    background-image: url(assets/icon-sun.svg);
+}
+/***************
+Search
+***************/
+.user-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background: var(--white);
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 10px 15px 5px rgba(0, 0, 0, .2);
+}
+.user-form.active {
+    background: var(--grayDark);
+}
+.user-form div:first-child {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 250px)
+}
+.user-form img {
+    height: 24px;
+    width: 24px;
+    margin: 0 15px;
+}
+.user-form input.placeholder-red::placeholder { 
+    color:var(--white);
+    }
+#search {
+    outline: none;
+    border: none;
+    font-size: 18px;
+    line-height: 25px;
+    width: calc(100% - 50px);
+    letter-spacing: 1.5px;
+}
+#search.active {
+    background: var(--grayDark);
+}
+.error-search {
+    display: flex;
+    align-items: center;
+}
+.error-search p {
+    color: red;
+    margin-right: 20px;
+    display: none;
+}
+.error-search.active p {
+    display: block;
+}
+/***************
+Main
+***************/
+main {
+    width: 100%;
+    padding: 50px;
+    background: var(--white);
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 10px 15px 5px rgba(0, 0, 0, .2);
+    display: grid;
+    grid-template: "img header  header  right"
+                   "img lorem   lorem   lorem"
+                   "aaa sec     sec     sec";
+    grid-auto-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto auto auto;
+}
+main.active {
+    background: var(--grayDark);
+}
+#user-img{
+    grid-area: img;
+    height: 117px;
+    width: 117px;
+    border-radius: 50%;
+}
+#user {
+    grid-area: header;
+}
+#date {
+    grid-area: right;
+}
+#lorem {
+    grid-area: lorem;
+    padding: 25px 0;
+}
+#section {
+    grid-area: sec;
+}
+.number {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--whiteLight);
+    border-radius: 10px;
+    padding: 10px 25px 10px 0px;
+}
+.number.active {
+    background: var(--black);
+
+}
+.number.active h2 {
+    color: var(--white);
+}
+.number div {
+    display: flex;
+    flex-direction: column;
+}
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+.icons article {
+    flex: 1 0 48%;
+    display: flex;
+    margin: 10px 0;
+}
+.icons article img {
+    margin-right: 20px;
+}
+.icons.active article img {
+    filter: brightness(500%);
+}
+.icons article a {
+    text-decoration:none;
+    color: var(--gray);
+}
+.icons article a:hover {
+    text-decoration:underline;
+}
+.twitter {
+    opacity: .3;
+}
+/***************
+responsive Tablet
+***************/
+@media (max-width:1200px) {
+    .container {
+        width: 75%;
+    }
+    main {
+        grid-template: "img header  header"
+                       "img right   right"
+                       "lorem lorem   lorem"
+                       "sec sec     sec";
+        grid-auto-columns: 33% 33% 33%;
+        grid-template-rows: auto auto auto auto;
+    }
+}
+/***************
+responsive Mob
+***************/
+@media (max-width:767px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 30px 0;
+    }
+    main {
+        padding: 25px;
+    }
+    .user-form {
+        margin: 10px 0;
+        padding: 7px;
+    }
+    .user-form div:first-child {
+        width: 70%;
+    }
+    .user-form img {
+        height: 20px;
+        width: 20px;
+        margin: 0 7px;
+    }
+    #search {
+        font-size: 13px;
+        line-height: 25px;
+        letter-spacing: 1px;
+        width: 85%;
+    }
+    button {
+        height: 46px;
+        width: 86px;
+    }
+    #user-img {
+        height: 70px;
+        width: 70px;
+    }
+    .number {
+        padding: 15px;
+    }
+    .number div {
+        text-align: center;
+    }
+    .icons article {
+        flex: 1 0 100%;
+    }
+    .error-search p {
+        font-size: 13px;
+        text-align: center;
+    }
+}
+@media (max-width:330px) {
+    #search {
+        font-size: 13px;
+        line-height: 25px;
+        letter-spacing: 0px;
+        width: 100%;
+    }
+    button {
+        height: 40px;
+        width: 60px;
+    }
+    .user-form img {
+        margin: 0px 3px;
+    }
+}
+@media (max-width:310px) {
+    #search {
+        font-size: 11px;
+    }
+}
